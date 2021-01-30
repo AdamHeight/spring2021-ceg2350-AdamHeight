@@ -1,0 +1,3 @@
+Here are the three lines of code.
+As directed in the lab.
+Poop.
