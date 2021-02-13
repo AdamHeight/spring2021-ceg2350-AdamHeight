@@ -3,5 +3,30 @@
 echo "This is from Marco"
 
 cwd=$(pwd)
+char1="y"
+char2="n"
 
-echo "$cwd" > /home/ubuntu/spring2021-ceg2350-AdamHeight/Lab04/scripts/reference
+if [ -s "/home/ubuntu/spring2021-ceg2350-AdamHeight/Lab04/scripts/reference" ]
+then 
+	echo "There is already a saved path."
+	echo "Would you like to overwrite it?"
+	read bool
+	bool2=$(echo "$bool" | tr '[:upper:]' '[:lower:]')
+	#bool='echo $bool | tr '[A-Z]' '[a-z]''
+	if [ "$bool2" = "$char1" ]
+	then
+		echo "$cwd" > /home/ubuntu/spring2021-ceg2350-AdamHeight/Lab04/scripts/reference
+	elif [ "$bool2" = "$char2" ]
+	then
+		echo "Ok, the path won't be saved"
+		exit 01
+	else
+		echo "I'm sorry, I didn't catch that."
+		echo "I only recognize y and n."
+		echo "Please run marco again"
+		exit 01
+	fi
+
+else
+	echo "$cwd" > /home/ubuntu/spring2021-ceg2350-AdamHeight/Lab04/scripts/reference
+fi
