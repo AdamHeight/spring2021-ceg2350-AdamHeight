@@ -8,7 +8,8 @@ MAIN = Echo
 	$(JC) $(JFLAGS) $*.java
 
 CLASSES = \
-	Echo.java
+	Echo.java \
+	MyFrame.java
 
 default: classes
 
