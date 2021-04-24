@@ -36,5 +36,16 @@ Part 2:
     Or copy and paste one of these URLs:
         http://localhost:8888/?token=e210fbbcc996e26b64e458ef9c13edcc06d1166aaba66a69
      or http://127.0.0.1:8888/?token=e210fbbcc996e26b64e458ef9c13edcc06d1166aaba66a69
-5. 
-6. 
+5. c3e59e3bfc09334235efaf2c6a4ae3d11f83550d2298792e
+6. -N - Do not execute a remote command	-f - Push SSH to background	-i - Specifies non-standard ID file	-L - Declares port forwarding
+
+Part 3:
+
+1. apt install python3-pip	pip install http
+3. sudo lsof -i -P -n | grep LISTEN
+
+sshd        848            root    3u  IPv4  20704      0t0  TCP *:22 (LISTEN)
+sshd        848            root    4u  IPv6  20715      0t0  TCP *:22 (LISTEN)
+systemd-r  2013 systemd-resolve   13u  IPv4 235581      0t0  TCP 127.0.0.53:53 (LISTEN)
+python3   15317          ubuntu    3u  IPv4 811867      0t0  TCP *:4444 (LISTEN)
+4. sudo kill -9 15317
